@@ -1,0 +1,51 @@
+<div class="seller-auth">
+    <main class="main-login">
+        <div class="left-login">
+            <img src="https://i.postimg.cc/YC13sX2Z/Astronaut-cuate.png" class="left-login-img" alt="astronaut image">
+        </div>
+    
+        <div class="right-login">
+            <div class="card-login" *ngIf="!showLogin">
+                <h1>Seller Sign Up</h1>
+                <form #sellerSignUp="ngForm" class="common-form" (ngSubmit)="signUp(sellerSignUp.value)">
+                    <div class="textfield">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" placeholder="Enter Name" ngModel>
+                    </div>
+        
+                    <div class="textfield">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="Enter Password" ngModel>
+                    </div>
+
+                    <div class="textfield">
+                        <label for="password">Email</label>
+                        <input type="text" name="email" placeholder="Enter Email" ngModel>
+                    </div>
+        
+                    <button  class="btn-login">Sign Up</button>
+                    <p class="text">Already have Account? <a class="link" (click)="openLogin()">Click to Login</a></p>
+                </form>
+            </div>
+
+            <div class="card-login" *ngIf="showLogin">
+                <h1>Seller Login</h1>
+                <p class="error">{{authError}}</p>
+                <form #sellerLogin="ngForm" class="common-form" (ngSubmit)="login(sellerLogin.value)">
+                    <div class="textfield">
+                        <label for="password">Email</label>
+                        <input type="text" name="email" placeholder="Enter Email" ngModel>
+                    </div>
+        
+                    <div class="textfield">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="Enter Password" ngModel>
+                    </div>
+        
+                    <button  class="btn-login">Login</button>
+                    <p class="text">Don't have an account? <a class="link" (click)="openSignIn()">Click to Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>

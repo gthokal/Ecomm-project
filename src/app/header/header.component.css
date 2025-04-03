@@ -1,0 +1,64 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.nav h1{
+    font-size: 40px;
+    color:blueviolet;
+    margin: 0;
+}
+
+.nav .menu{
+    display: inline-flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav .menu li{
+    padding: 0 5px;
+    cursor: pointer;
+    margin: 0 5px;
+
+}
+
+.nav .menu li a, h1 .logo{
+    text-decoration: none;
+    color: blueviolet;
+    cursor: pointer;
+}
+.nav .menu li a.active{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.search-box{
+    display: flex;
+}
+
+.search{
+    flex: 1;
+    width: 100%;
+    min-width: 200px;
+    padding: 10px 15px;
+    border: 1px solid blueviolet;
+    border-radius: 8px 0 0 8px;
+    background: #7da3b526;
+    border: 1px solid green;
+    border-right: 0px;
+}
+
+.btn{
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid green;
+    background: #abdcad;
+}
+.btn:hover{
+    background: #9febc3;
+}

@@ -1,0 +1,38 @@
+<nav class="nav">
+    <h1><a class="logo" routerLink="/">E-comm</a></h1>
+    <div *ngIf="menuType==='default'" class="search-box">
+        <input class="search" type="text" placeholder="Search for Products">
+        <button class="btn">Search</button>
+    </div>
+    <div [ngSwitch]="menuType">
+        <ul *ngSwitchCase="'default'" class="menu">
+            <li>
+                <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" routerLink="/seller-auth">Seller</a>
+            </li>
+            <li>
+                <a href="#">Login</a>
+            </li>
+            <li>
+                <a href="#">Cart(0)</a>
+            </li>
+        </ul>
+
+        <ul *ngSwitchCase="'seller'" class="menu">
+            <li>
+                <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/seller-auth">Product List</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" routerLink="">Add Product</a>
+            </li>
+            <li>
+                <a (click)="logout()">Logout</a>
+            </li>
+            <li>
+                <a href="#">{{sellerName | titlecase}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
